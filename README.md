@@ -21,7 +21,7 @@ The Partnership is going to start selling a JLP laptop that can be configured us
 Each option will have an `option name` plus a `description` and a `price`. E.g. memory upgrade will have a name of `Memory` and description (e.g. `16GB`) and a price (e.g. `49.99`) which are specified when the option is added to the laptop.
 
 The finished laptop object should be able to tell you:
-- `Description` which includes the price of all of the options as a String.
+- `Description` which includes the price of all of the options (selected?) as a String.
 - A `total price` for the laptop and all of the options added as a number (e.g. a Double).
 
 ------

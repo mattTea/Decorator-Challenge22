@@ -1,0 +1,3 @@
+class Laptop {
+    val description = ""
+}
