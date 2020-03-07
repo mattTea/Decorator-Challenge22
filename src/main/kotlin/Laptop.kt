@@ -1,5 +1,8 @@
 fun main() {
-    //TODO
+    val laptop = CaseUpgrade(BatteryUpgrade(GraphicsUpgrade(DriveUpgrade(MemoryUpgrade(ProcessorUpgrade(BaseLaptop()))))))
+
+    println(laptop.description)
+    println("Total price: ${laptop.price}")
 }
 
 interface Laptop {
