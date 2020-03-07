@@ -35,3 +35,6 @@ The decorator design pattern allows us to dynamically add functionality and beha
 We use inheritance to extend the behavior of the class. This takes place at compile time, and all of the instances of that class get the extended behavior.
 
 Decorator design patterns allow us to add functionality to an object (not the class) at runtime, and we can apply this customised functionality to an individual object based on our requirement and choice.
+
+
+*See also my [journal entry](https://github.com/mattTea/journal/blob/master/2020/03-March/2020-03-07.md) describing this pattern and the above implementation*
