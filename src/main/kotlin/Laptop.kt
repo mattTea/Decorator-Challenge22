@@ -1,27 +1,27 @@
 fun main() {
-//    val laptop = Laptop()
-//
-//    println(laptop.processor.price)
+    //TODO
 }
 
-const val BASE_PRICE = 1000.0
-
 interface Laptop {
-    val description: String
     val price: Double
+    val description: String
 }
 
 class BaseLaptop : Laptop {
-    override val description: String
-        get() = "Base laptop"
-
-    override val price: Double
-        get() = BASE_PRICE
+    override val price = 1000.0
+    override val description = "Base laptop @ $price"
 }
 
-class ProcessorUpgrade(private val baseLaptop: BaseLaptop) : Laptop by baseLaptop {
+class ProcessorUpgrade(private val laptop: Laptop) : Laptop by laptop {
     private val optionPrice = 149.99
 
-    override val price = baseLaptop.price + optionPrice
-    override val description = "${baseLaptop.description} @ $BASE_PRICE, with 18 core processor @ $optionPrice. Total: $price"
+    override val price = laptop.price + optionPrice
+    override val description = "${laptop.description}, 18 core processor @ $optionPrice"
+}
+
+class MemoryUpgrade(private val laptop: Laptop) : Laptop by laptop {
+    private val optionPrice = 49.99
+
+    override val price = laptop.price + optionPrice
+    override val description = "${laptop.description}, 1TB RAM @ $optionPrice"
 }

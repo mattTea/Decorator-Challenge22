@@ -9,8 +9,8 @@ class LaptopKtTest {
     fun `should create laptop with empty description and base total price when no options added`() {
         val laptop = BaseLaptop()
 
-        assertThat(laptop.description).isEqualTo("Base laptop")
-        assertThat(laptop.price).isEqualTo(BASE_PRICE)
+        assertThat(laptop.description).isEqualTo("Base laptop @ 1000.0")
+        assertThat(laptop.price).isEqualTo(1000.0)
     }
 
     @Test
@@ -18,8 +18,18 @@ class LaptopKtTest {
         val laptop = ProcessorUpgrade(BaseLaptop())
 
         assertThat(laptop.description).isEqualTo(
-            "Base laptop @ 1000.0, with 18 core processor @ 149.99. Total: 1149.99"
+            "Base laptop @ 1000.0, 18 core processor @ 149.99"
         )
         assertThat(laptop.price).isEqualTo(1149.99)
+    }
+
+    @Test
+    fun `create laptop with description and price that includes a processor and memory upgrade`() {
+        val laptop = MemoryUpgrade(ProcessorUpgrade(BaseLaptop()))
+
+        assertThat(laptop.description).isEqualTo(
+            "Base laptop @ 1000.0, 18 core processor @ 149.99, 1TB RAM @ 49.99"
+        )
+        assertThat(laptop.price).isEqualTo(1199.98)
     }
 }
