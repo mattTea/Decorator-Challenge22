@@ -39,3 +39,17 @@ class GraphicsUpgrade(private val laptop: Laptop) : Laptop by laptop {
     override val price = laptop.price + optionPrice
     override val description = "${laptop.description}, Lightning Graphics Card @ $optionPrice"
 }
+
+class BatteryUpgrade(private val laptop: Laptop) : Laptop by laptop {
+    private val optionPrice = 39.99
+
+    override val price = laptop.price + optionPrice
+    override val description = "${laptop.description}, Massive Battery @ $optionPrice"
+}
+
+class CaseUpgrade(private val laptop: Laptop) : Laptop by laptop {
+    private val optionPrice = 59.99
+
+    override val price = laptop.price + optionPrice
+    override val description = "${laptop.description}, Bling Case @ $optionPrice"
+}

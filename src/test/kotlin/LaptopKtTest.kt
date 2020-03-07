@@ -52,4 +52,24 @@ class LaptopKtTest {
         )
         assertThat(laptop.price).isEqualTo(1339.96)
     }
+
+    @Test
+    fun `should create laptop with description and price that includes processor, memory, hard drive, graphics card and battery upgrades`() {
+        val laptop = BatteryUpgrade(GraphicsUpgrade(DriveUpgrade(MemoryUpgrade(ProcessorUpgrade(BaseLaptop())))))
+
+        assertThat(laptop.description).isEqualTo(
+            "Base laptop @ 1000.0, 18 core processor @ 149.99, 1TB RAM @ 49.99, SSD @ 109.99, Lightning Graphics Card @ 29.99, Massive Battery @ 39.99"
+        )
+        assertThat(laptop.price).isEqualTo(1379.95)
+    }
+
+    @Test
+    fun `should create laptop with description and price that includes processor, memory, hard drive, graphics card, battery and case upgrades`() {
+        val laptop = CaseUpgrade(BatteryUpgrade(GraphicsUpgrade(DriveUpgrade(MemoryUpgrade(ProcessorUpgrade(BaseLaptop()))))))
+
+        assertThat(laptop.description).isEqualTo(
+            "Base laptop @ 1000.0, 18 core processor @ 149.99, 1TB RAM @ 49.99, SSD @ 109.99, Lightning Graphics Card @ 29.99, Massive Battery @ 39.99, Bling Case @ 59.99"
+        )
+        assertThat(laptop.price).isEqualTo(1439.94)
+    }
 }
