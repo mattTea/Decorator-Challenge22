@@ -28,6 +28,8 @@ The finished laptop object should be able to tell you:
 
 ## The Decorator Pattern
 
+[Referenced DZone article](https://dzone.com/articles/decorator-design-pattern-in-java)
+
 The decorator design pattern allows us to dynamically add functionality and behavior to an object without affecting the behavior of other existing objects in the same class. 
 
 We use inheritance to extend the behavior of the class. This takes place at compile time, and all of the instances of that class get the extended behavior.
